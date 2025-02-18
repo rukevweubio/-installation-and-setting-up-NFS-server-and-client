@@ -90,7 +90,11 @@ sudo mount -t nfs 192.168.1.100:/mnt/nfsshare /mnt/nfsclient
 ## Maintenance 
 Updating NFS
 Regularly update the NFS packages to ensure security and stability:
-```sudo apt update && sudo apt upgrade -y
+
+```
+sudo apt update && sudo apt upgrade -y
+
+
 ```
 
 ## Managing Logs
