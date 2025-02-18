@@ -61,6 +61,7 @@ sudo exportfs -v
 ```
 ## Testing and Verification
 From the NFS Server
+
 ```
 showmount -e localhost
 
@@ -81,25 +82,28 @@ Issue: Unable to mount the NFS share.
 Solution: Check firewall rules and ensure the NFS service is running
 
 ```
+
 sudo ufw allow nfs
 sudo systemctl status nfs-kernel-server
 sudo chmod 777 /mnt/nfsshare
 sudo chown nobody:nogroup /mnt/nfsshare
 sudo mount -t nfs 192.168.1.100:/mnt/nfsshare /mnt/nfsclient
+
+
 ````
 ## Maintenance 
 Updating NFS
 Regularly update the NFS packages to ensure security and stability:
-
 ```
 sudo apt update && sudo apt upgrade -y
-
-
 ```
 
 ## Managing Logs
 Monitor NFS logs for troubleshooting:
-``` sudo tail -f /var/log/syslog
+```
+
+sudo tail -f /var/log/syslog
+
 ```
 Additional Features
 Automounting with /etc/fstab
