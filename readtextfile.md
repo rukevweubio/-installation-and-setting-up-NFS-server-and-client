@@ -115,5 +115,7 @@ To automatically mount the NFS share on boot, add an entry to /etc/fstab on the 
 ## From an NFS Client
 install  the client server
 showmount -e localhost
-``
+```
+
+![NFS Server Installation](https://github.com/rukevweubio/NFS-Server-Installation-and-Configuration/raw/master/Screenshot%20(419).png)
 
