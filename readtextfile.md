@@ -33,17 +33,18 @@ Before proceeding, ensure the following prerequisites are met:
 ## Installation Steps
 Follow these steps to install the Samba server:
 
-1. Update the system:
-   ```bash
+1. Update the system
+
+   ```
+   bash
    sudo apt update && sudo apt upgrade -y
    sudo apt install nfs-kernel-server -y
    sudo systemctl start nsf-kernel-server
   sudo systemctl enable nfs-kernel-server
   sudo systemctl status nfs-kernel-server
+  
   ```
 ## Configuration Steps
-
-
 ```
 sudo mkdir -p /home/samba/shared
 sudo chmod 777 /home/samba/shared
@@ -65,14 +66,9 @@ sudo exportfs -v
 ## Testing and Verification
 From the NFS Server
 
-```
-showmount -e localhost
+
 
 ```
-## From an NFS Client
-install  the client server
-```
-
 sudo apt install nfs-common -y
 sudo mkdir -p /mnt/nfsclient
 sudo mount -t nfs 192.168.XXXX:/mnt/nfsshare /mnt/nfsclient
@@ -85,13 +81,11 @@ Issue: Unable to mount the NFS share.
 Solution: Check firewall rules and ensure the NFS service is running
 
 ```
-
 sudo ufw allow nfs
 sudo systemctl status nfs-kernel-server
 sudo chmod 777 /mnt/nfsshare
 sudo chown nobody:nogroup /mnt/nfsshare
 sudo mount -t nfs 192.168.1.100:/mnt/nfsshare /mnt/nfsclient
-
 
 ````
 ## Maintenance 
@@ -102,19 +96,24 @@ sudo apt update && sudo apt upgrade -y
 ```
 
 ## Managing Logs
-Monitor NFS logs for troubleshooting:
+Monitor NFS logs for troubleshooting
+
 ```
-
 sudo tail -f /var/log/syslog
-
 ```
 Additional Features
 Automounting with /etc/fstab
 To automatically mount the NFS share on boot, add an entry to /etc/fstab on the client
+
 ```
 192.168.1.xxx:/mnt/nfsshare /mnt/nfsclient nfs defaults,timeo=14,intr 0 0
 
 ```
 
 
+```
+## From an NFS Client
+install  the client server
+showmount -e localhost
+``
 
