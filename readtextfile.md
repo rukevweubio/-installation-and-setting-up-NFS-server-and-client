@@ -42,13 +42,16 @@ Follow these steps to install the Samba server:
   sudo systemctl status nfs-kernel-server
   ```
 ## Configuration Steps
+
+
 ```
 sudo mkdir -p /home/samba/shared
 sudo chmod 777 /home/samba/shared
 sudo mkdir -p /mnt/nfsshare
 sudo chmod 777 /mnt/nfsshare
 sudo chown nobody:nogroup /mnt/nfsshare
-  ```
+
+```
 ```
 Edit the Exports File
 Edit the /etc/exports file to specify which directories should be shared:
