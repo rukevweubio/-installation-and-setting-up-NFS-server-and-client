@@ -118,4 +118,6 @@ showmount -e localhost
 ```
 
 ![NFS Server Installation](https://github.com/rukevweubio/NFS-Server-Installation-and-Configuration/raw/master/Screenshot%20(419).png)
+## Diagram of linux disk 
+![NFS Server Installation](https://github.com/rukevweubio/NFS-Server-Installation-and-Configuration/blob/master/Screenshot%20(416).png)
 
